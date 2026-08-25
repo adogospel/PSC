@@ -19,13 +19,11 @@ export const prayers = [
   {
     id: "1",
 
-    slug:
-      "direction-pour-mes-etudes",
+    slug: "direction-pour-mes-etudes",
 
     category: "Études",
 
-    title:
-      "Besoin de direction pour mes études",
+    title: "Besoin de direction pour mes études",
 
     excerpt:
       "Je dois prendre une décision importante concernant la suite de mon parcours et j’aimerais être porté dans la prière.",
@@ -44,13 +42,11 @@ export const prayers = [
   {
     id: "2",
 
-    slug:
-      "entretien-embauche",
+    slug: "entretien-embauche",
 
     category: "Travail",
 
-    title:
-      "Priez pour mon entretien d’embauche",
+    title: "Priez pour mon entretien d’embauche",
 
     excerpt:
       "J’ai un entretien cette semaine. Je prie pour avoir la paix, la sagesse et accepter la bonne porte.",
@@ -69,14 +65,11 @@ export const prayers = [
   {
     id: "3",
 
-    slug:
-      "reconnaissance-famille",
+    slug: "reconnaissance-famille",
 
-    category:
-      "Reconnaissance",
+    category: "Reconnaissance",
 
-    title:
-      "Une réponse inattendue pour ma famille",
+    title: "Une réponse inattendue pour ma famille",
 
     excerpt:
       "Après plusieurs semaines de prière, une situation qui semblait bloquée s’est débloquée. Merci à tous ceux qui ont prié.",
@@ -95,14 +88,11 @@ export const prayers = [
   {
     id: "4",
 
-    slug:
-      "paix-dans-une-decision",
+    slug: "paix-dans-une-decision",
 
-    category:
-      "Direction divine",
+    category: "Direction divine",
 
-    title:
-      "Paix dans une décision importante",
+    title: "Paix dans une décision importante",
 
     excerpt:
       "Je dois faire un choix qui aura un impact sur plusieurs personnes. Priez pour que je ne sois pas guidé par la peur.",
@@ -123,25 +113,21 @@ export const testimonies = [
   {
     name: "Grâce",
 
-    text:
-      "J’ai confié une situation familiale qui me pesait depuis des mois. La paix est revenue avant même que les circonstances changent.",
+    text: "J’ai confié une situation familiale qui me pesait depuis des mois. La paix est revenue avant même que les circonstances changent.",
   },
 
   {
     name: "Anonyme",
 
-    text:
-      "Voir des personnes prendre le temps de prier pour moi a transformé ma manière de traverser cette période.",
+    text: "Voir des personnes prendre le temps de prier pour moi a transformé ma manière de traverser cette période.",
   },
 ];
 
 export const ebooks = [
   {
-    title:
-      "Grandir dans la prière",
+    title: "Grandir dans la prière",
 
-    author:
-      "Équipe Prier sans cesse",
+    author: "Équipe Prier sans cesse",
 
     category: "Prière",
 
@@ -149,11 +135,9 @@ export const ebooks = [
   },
 
   {
-    title:
-      "Marcher par la foi",
+    title: "Marcher par la foi",
 
-    author:
-      "Équipe éditoriale",
+    author: "Équipe éditoriale",
 
     category: "Foi",
 
@@ -161,14 +145,11 @@ export const ebooks = [
   },
 
   {
-    title:
-      "Cultiver la paix",
+    title: "Cultiver la paix",
 
-    author:
-      "Équipe éditoriale",
+    author: "Équipe éditoriale",
 
-    category:
-      "Vie chrétienne",
+    category: "Vie chrétienne",
 
     pages: 76,
   },
@@ -176,11 +157,9 @@ export const ebooks = [
 
 export const sermons = [
   {
-    title:
-      "Persévérer dans la prière",
+    title: "Persévérer dans la prière",
 
-    preacher:
-      "Pasteur invité",
+    preacher: "Pasteur invité",
 
     category: "Prière",
 
@@ -188,11 +167,9 @@ export const sermons = [
   },
 
   {
-    title:
-      "La foi au milieu de l’attente",
+    title: "La foi au milieu de l’attente",
 
-    preacher:
-      "Pasteur invité",
+    preacher: "Pasteur invité",
 
     category: "Foi",
 
@@ -200,11 +177,9 @@ export const sermons = [
   },
 
   {
-    title:
-      "Porter les fardeaux les uns des autres",
+    title: "Porter les fardeaux les uns des autres",
 
-    preacher:
-      "Pasteur invité",
+    preacher: "Pasteur invité",
 
     category: "Communion",
 

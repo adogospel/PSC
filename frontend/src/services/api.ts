@@ -1,10 +1,6 @@
-const API_URL =
-  import.meta.env
-    .VITE_API_URL ??
-  "http://localhost:8000/api/v1";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api/v1";
 
-export class ApiError
-  extends Error {
+export class ApiError extends Error {
   constructor(
     message: string,
 
@@ -23,45 +19,34 @@ export async function apiFetch<T>(
 
   init?: RequestInit,
 ): Promise<T> {
-  const response =
-    await fetch(
-      `${API_URL}${path}`,
+  const response = await fetch(
+    `${API_URL}${path}`,
 
-      {
-        ...init,
+    {
+      ...init,
 
-        headers: {
-          "Content-Type":
-            "application/json",
+      headers: {
+        "Content-Type": "application/json",
 
-          ...init?.headers,
-        },
-
-        /*
-         * Nécessaire plus tard
-         * pour le refresh token
-         * HttpOnly.
-         */
-        credentials: "include",
+        ...init?.headers,
       },
-    );
 
-  const contentType =
-    response.headers.get(
-      "content-type",
-    ) ?? "";
+      /*
+       * Nécessaire plus tard
+       * pour le refresh token
+       * HttpOnly.
+       */
+      credentials: "include",
+    },
+  );
 
-  const payload =
-    contentType.includes(
-      "application/json",
-    )
-      ? await response.json()
-      : null;
+  const contentType = response.headers.get("content-type") ?? "";
+
+  const payload = contentType.includes("application/json") ? await response.json() : null;
 
   if (!response.ok) {
     throw new ApiError(
-      payload?.message ??
-        "Une erreur est survenue.",
+      payload?.message ?? "Une erreur est survenue.",
 
       response.status,
 
@@ -83,7 +68,5 @@ export type HealthResponse = {
 };
 
 export function getHealth() {
-  return apiFetch<HealthResponse>(
-    "/health",
-  );
+  return apiFetch<HealthResponse>("/health");
 }

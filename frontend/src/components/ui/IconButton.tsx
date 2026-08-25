@@ -1,10 +1,6 @@
-import type {
-  ButtonHTMLAttributes,
-} from "react";
+import type { ButtonHTMLAttributes } from "react";
 
-import {
-  cn,
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export default function IconButton({
   className,
@@ -14,7 +10,7 @@ export default function IconButton({
   return (
     <button
       className={cn(
-        "inline-grid size-11 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-orange-light/50 hover:text-orange-deep",
+        "border-line text-ink hover:border-orange-light/50 hover:text-orange-deep inline-grid size-11 place-items-center rounded-full border bg-white transition",
 
         className,
       )}

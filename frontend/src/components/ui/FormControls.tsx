@@ -1,15 +1,12 @@
 import {
   forwardRef,
-
   type InputHTMLAttributes,
   type ReactNode,
   type SelectHTMLAttributes,
   type TextareaHTMLAttributes,
 } from "react";
 
-import {
-  cn,
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 const base = [
   "w-full",
@@ -29,88 +26,50 @@ const base = [
   "focus:ring-orange-light/10",
 ].join(" ");
 
-export const Input =
-  forwardRef<
-    HTMLInputElement,
-    InputHTMLAttributes<HTMLInputElement>
-  >(
-    (
-      {
-        className,
+export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(
+  (
+    {
+      className,
 
-        ...props
-      },
+      ...props
+    },
 
-      ref,
-    ) => (
-      <input
-        ref={ref}
-        className={cn(
-          base,
-          "h-12",
-          className,
-        )}
-        {...props}
-      />
-    ),
-  );
+    ref,
+  ) => <input ref={ref} className={cn(base, "h-12", className)} {...props} />,
+);
 
 Input.displayName = "Input";
 
-export const Textarea =
-  forwardRef<
-    HTMLTextAreaElement,
-    TextareaHTMLAttributes<HTMLTextAreaElement>
-  >(
-    (
-      {
-        className,
+export const Textarea = forwardRef<
+  HTMLTextAreaElement,
+  TextareaHTMLAttributes<HTMLTextAreaElement>
+>(
+  (
+    {
+      className,
 
-        ...props
-      },
+      ...props
+    },
 
-      ref,
-    ) => (
-      <textarea
-        ref={ref}
-        className={cn(
-          base,
-          "min-h-36 resize-y py-3.5",
-          className,
-        )}
-        {...props}
-      />
-    ),
-  );
+    ref,
+  ) => (
+    <textarea ref={ref} className={cn(base, "min-h-36 resize-y py-3.5", className)} {...props} />
+  ),
+);
 
-Textarea.displayName =
-  "Textarea";
+Textarea.displayName = "Textarea";
 
-export const Select =
-  forwardRef<
-    HTMLSelectElement,
-    SelectHTMLAttributes<HTMLSelectElement>
-  >(
-    (
-      {
-        className,
+export const Select = forwardRef<HTMLSelectElement, SelectHTMLAttributes<HTMLSelectElement>>(
+  (
+    {
+      className,
 
-        ...props
-      },
+      ...props
+    },
 
-      ref,
-    ) => (
-      <select
-        ref={ref}
-        className={cn(
-          base,
-          "h-12",
-          className,
-        )}
-        {...props}
-      />
-    ),
-  );
+    ref,
+  ) => <select ref={ref} className={cn(base, "h-12", className)} {...props} />,
+);
 
 Select.displayName = "Select";
 
@@ -135,20 +94,14 @@ export function Field({
 }: FieldProps) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-semibold text-ink">
-        {label}
-      </span>
+      <span className="text-ink mb-2 block text-sm font-semibold">{label}</span>
 
       {children}
 
       {error ? (
-        <span className="mt-2 block text-xs font-medium text-red-warm">
-          {error}
-        </span>
+        <span className="text-red-warm mt-2 block text-xs font-medium">{error}</span>
       ) : hint ? (
-        <span className="mt-2 block text-xs leading-5 text-muted">
-          {hint}
-        </span>
+        <span className="text-muted mt-2 block text-xs leading-5">{hint}</span>
       ) : null}
     </label>
   );

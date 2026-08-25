@@ -6,11 +6,7 @@
 
     "useDefineForClassFields": true,
 
-    "lib": [
-      "ES2022",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
 
     "allowJs": false,
     "skipLibCheck": true,
@@ -34,13 +30,9 @@
     "baseUrl": ".",
 
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
 
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

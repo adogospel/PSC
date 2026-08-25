@@ -1,10 +1,6 @@
-import {
-  Link,
-} from "react-router";
+import { Link } from "react-router";
 
-import {
-  cn,
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
   className?: string;
@@ -27,13 +23,9 @@ export default function Logo({
         className,
       )}
     >
-      <span className="psc-gradient relative grid size-10 place-items-center rounded-2xl p-[1px] shadow-soft">
-        <span className="grid size-full place-items-center rounded-[15px] bg-ivory text-orange-deep">
-          <svg
-            viewBox="0 0 48 48"
-            className="size-7"
-            aria-hidden="true"
-          >
+      <span className="psc-gradient shadow-soft relative grid size-10 place-items-center rounded-2xl p-[1px]">
+        <span className="bg-ivory text-orange-deep grid size-full place-items-center rounded-[15px]">
+          <svg viewBox="0 0 48 48" className="size-7" aria-hidden="true">
             <path
               d="M24 5v24"
               fill="none"
@@ -67,11 +59,11 @@ export default function Logo({
 
       {!compact && (
         <span className="leading-none">
-          <span className="block font-serif text-[1.35rem] font-semibold tracking-[-0.03em] text-ink">
+          <span className="text-ink block font-serif text-[1.35rem] font-semibold tracking-[-0.03em]">
             Prier sans cesse
           </span>
 
-          <span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-muted">
+          <span className="text-muted mt-1 block text-[0.62rem] font-semibold tracking-[0.22em] uppercase">
             Paix · Espérance · Communion
           </span>
         </span>

@@ -1,11 +1,6 @@
-import type {
-  HTMLAttributes,
-  ReactNode,
-} from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
-import {
-  cn,
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function Badge({
   className,
@@ -15,7 +10,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border border-orange-light/25 bg-orange-light/10 px-3 py-1 text-xs font-semibold text-orange-deep",
+        "border-orange-light/25 bg-orange-light/10 text-orange-deep inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold",
 
         className,
       )}
@@ -39,10 +34,7 @@ export function Avatar({
       ? "A"
       : name
           .split(" ")
-          .map(
-            (part) =>
-              part[0],
-          )
+          .map((part) => part[0])
           .join("")
           .slice(0, 2)
           .toUpperCase();
@@ -51,7 +43,7 @@ export function Avatar({
     <span
       aria-label={name}
       className={cn(
-        "grid size-9 shrink-0 place-items-center rounded-full bg-beige-rose text-xs font-bold text-ink",
+        "bg-beige-rose text-ink grid size-9 shrink-0 place-items-center rounded-full text-xs font-bold",
 
         className,
       )}
@@ -61,16 +53,12 @@ export function Avatar({
   );
 }
 
-export function Skeleton({
-  className,
-}: {
-  className?: string;
-}) {
+export function Skeleton({ className }: { className?: string }) {
   return (
     <span
       aria-hidden="true"
       className={cn(
-        "block animate-pulse rounded-2xl bg-beige-rose/75",
+        "bg-beige-rose/75 block animate-pulse rounded-2xl",
 
         className,
       )}
@@ -100,24 +88,16 @@ export function EmptyState({
   return (
     <div className="surface rounded-4xl px-6 py-12 text-center">
       {icon && (
-        <div className="mx-auto mb-4 grid size-12 place-items-center rounded-2xl bg-orange-light/10 text-orange-deep">
+        <div className="bg-orange-light/10 text-orange-deep mx-auto mb-4 grid size-12 place-items-center rounded-2xl">
           {icon}
         </div>
       )}
 
-      <h3 className="font-serif text-2xl font-semibold text-ink">
-        {title}
-      </h3>
+      <h3 className="text-ink font-serif text-2xl font-semibold">{title}</h3>
 
-      <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted">
-        {description}
-      </p>
+      <p className="text-muted mx-auto mt-2 max-w-md text-sm leading-6">{description}</p>
 
-      {action && (
-        <div className="mt-6">
-          {action}
-        </div>
-      )}
+      {action && <div className="mt-6">{action}</div>}
     </div>
   );
 }

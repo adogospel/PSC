@@ -1,17 +1,10 @@
-import type {
-  ReactNode,
-} from "react";
+import type { ReactNode } from "react";
 
-import {
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 
-import {
-  cn,
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 type TabsProps = {
   items: {
@@ -22,9 +15,7 @@ type TabsProps = {
 
   value: string;
 
-  onChange: (
-    value: string,
-  ) => void;
+  onChange: (value: string) => void;
 };
 
 export function Tabs({
@@ -36,29 +27,22 @@ export function Tabs({
 }: TabsProps) {
   return (
     <div className="flex flex-wrap gap-2">
-      {items.map(
-        (item) => (
-          <button
-            key={item.value}
-            type="button"
-            onClick={() =>
-              onChange(
-                item.value,
-              )
-            }
-            className={cn(
-              "rounded-full px-4 py-2 text-sm font-semibold transition",
+      {items.map((item) => (
+        <button
+          key={item.value}
+          type="button"
+          onClick={() => onChange(item.value)}
+          className={cn(
+            "rounded-full px-4 py-2 text-sm font-semibold transition",
 
-              value ===
-                item.value
-                ? "psc-gradient text-white"
-                : "border border-line bg-white/70 text-muted hover:text-ink",
-            )}
-          >
-            {item.label}
-          </button>
-        ),
-      )}
+            value === item.value
+              ? "psc-gradient text-white"
+              : "border-line text-muted hover:text-ink border bg-white/70",
+          )}
+        >
+          {item.label}
+        </button>
+      ))}
     </div>
   );
 }
@@ -73,52 +57,27 @@ export function Pagination({
   totalPages?: number;
 }) {
   return (
-    <nav
-      aria-label="Pagination"
-      className="flex items-center justify-center gap-2"
-    >
-      <Button
-        variant="secondary"
-        size="sm"
-        disabled={page <= 1}
-      >
-        <ChevronLeft
-          size={16}
-        />
-
+    <nav aria-label="Pagination" className="flex items-center justify-center gap-2">
+      <Button variant="secondary" size="sm" disabled={page <= 1}>
+        <ChevronLeft size={16} />
         Précédent
       </Button>
 
-      <span className="px-3 text-sm text-muted">
-        {page} /{" "}
-        {totalPages}
+      <span className="text-muted px-3 text-sm">
+        {page} / {totalPages}
       </span>
 
-      <Button
-        variant="secondary"
-        size="sm"
-        disabled={
-          page >=
-          totalPages
-        }
-      >
+      <Button variant="secondary" size="sm" disabled={page >= totalPages}>
         Suivant
-
-        <ChevronRight
-          size={16}
-        />
+        <ChevronRight size={16} />
       </Button>
     </nav>
   );
 }
 
-export function Carousel({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export function Carousel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex snap-x gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="flex snap-x [scrollbar-width:none] gap-5 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden">
       {children}
     </div>
   );
